@@ -11,40 +11,32 @@ function App() {
   
   const addStrike = () => {
     const sum = strikes + 1
-    if(sum >= 3){
-      reset()
-    }else{setStrikes(sum)}
+    sum >= 4 ? reset() : setStrikes(sum) 
+
   }
 
   const addBall = () => {
     const sum = balls + 1
-    if(sum >= 4){
-      reset()
-    }else{setBalls(sum)}
+    sum >= 4 ? reset() : setBalls(sum) 
+
     
   }
+    return (
+      <div className="App">
+        <h1>Baseball App</h1>
+        <h2>Strikes: {strikes}</h2>
+        <h2>Balls: {balls}</h2>
+        <div className= 'btn=container'>
+          <button onClick= {addStrike} >Strike</button>
+          <button onClick= {addBall} >Ball</button>
+          <button onClick= {addStrike} >Foul</button>
+          <button onClick= {reset} >Hit</button>
+        </div>
   
-
-  
-
-  return (
-    <div className="App">
-      <h1>Baseball App</h1>
-      <h2>Strikes: {strikes}</h2>
-      <h2>Balls: {balls}</h2>
-      <div className= 'btn=container'>
-        <button onClick= {addStrike} >Strike</button>
-        <button onClick= {addBall} >Ball</button>
-        <button onClick= {addStrike} >Foul</button>
-        <button onClick= {reset} >Hit</button>
       </div>
-
-    </div>
-  );
+    )
 }
+export default App
 
-export default App;
-function newFunction(strikes) {
-  return strikes + 1;
-}
+
 
