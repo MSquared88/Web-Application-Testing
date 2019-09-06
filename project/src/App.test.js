@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import { render, getByTestId, fireEvent } from '@testing-library/react'
+import { render, getByTestId, fireEvent, queryByText } from '@testing-library/react'
 
 
 it('renders without crashing', () => {
@@ -10,6 +10,11 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+test('does the header say Baseball App', () => {
+  const { container } = render(<App/>)
+  const header = queryByText(container, 'Baseball App')
+})
 
 test("app loads with state of 0", () =>{
   const { container } = render(<App/>);
