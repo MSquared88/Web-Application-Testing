@@ -14,6 +14,7 @@ it('renders without crashing', () => {
 test('does the header say Baseball App', () => {
   const { container } = render(<App/>)
   const header = queryByText(container, 'Baseball App')
+  expect(header.textContent).toBe('Baseball App')
 })
 
 test("app loads with state of 0", () =>{
